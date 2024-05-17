@@ -1,0 +1,40 @@
+DROP TRIGGER IF EXISTS evaluate_advert ON marketplace.price_history;
+DROP TRIGGER IF EXISTS evaluate_history ON marketplace.advert;
+DROP TRIGGER IF EXISTS clear_product_data ON marketplace.product;
+DROP TRIGGER IF EXISTS clear_seller_data ON marketplace.seller;
+DROP TRIGGER IF EXISTS clear_user_data ON marketplace.customer;
+
+DROP INDEX IF EXISTS product_category;
+DROP INDEX IF EXISTS product_lower;
+DROP INDEX IF EXISTS customer_alphabetical;
+DROP INDEX IF EXISTS seller_alphabetical;
+DROP INDEX IF EXISTS favourite_user;
+
+DROP VIEW IF EXISTS customer_review;
+DROP VIEW IF EXISTS product_price_min;
+DROP VIEW IF EXISTS seller_adverts;
+DROP VIEW IF EXISTS price_current;
+DROP VIEW IF EXISTS user_private;
+
+DROP FUNCTION IF EXISTS EVALUATE_HISTORY;
+DROP FUNCTION IF EXISTS EVALUATE_ADVERT;
+DROP FUNCTION IF EXISTS CLEAR_PRODUCT_DATA;
+DROP FUNCTION IF EXISTS CLEAR_SELLER_DATA;
+DROP FUNCTION IF EXISTS CLEAR_USER_DATA;
+DROP FUNCTION IF EXISTS PART_PHONE;
+DROP FUNCTION IF EXISTS PART_EMAIL;
+DROP FUNCTION IF EXISTS RANDOM_STRING(len INT);
+DROP FUNCTION IF EXISTS RANDOM_TIMESTAMP(lhs TIMESTAMP, rhs TIMESTAMP);
+DROP FUNCTION IF EXISTS RANDOM_NUMERIC(lhs NUMERIC, rhs NUMERIC);
+DROP FUNCTION IF EXISTS RANDOM_INT(lhs BIGINT, rhs BIGINT);
+
+DROP TABLE IF EXISTS marketplace.favourite;
+DROP TABLE IF EXISTS marketplace.review;
+DROP TABLE IF EXISTS marketplace.customer;
+DROP TABLE IF EXISTS marketplace.price_history;
+DROP TABLE IF EXISTS marketplace.advert;
+DROP TABLE IF EXISTS marketplace.seller;
+DROP TABLE IF EXISTS marketplace.characteristic;
+DROP TABLE IF EXISTS marketplace.product;
+DROP TABLE IF EXISTS marketplace.category;
+DROP SCHEMA IF EXISTS marketplace;
