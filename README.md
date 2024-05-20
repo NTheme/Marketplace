@@ -47,7 +47,7 @@
 
 #### Для запуска тестирования выполнить:
 ```bash
-pytest test_db.py
+pytest tests/test_db.py
 ```
 
 ### Рабочий режим

@@ -8,8 +8,8 @@ executes = ["init", "function/partial", "function/trigger", "function/random", "
 
 
 def execute_check(test_db, test):
-    test_db.execute(open("tests/requests/" + test + ".sql", "r").read())
-    assert str(test_db.fetchall()) == open("tests/output/" + test + ".out", "r").read()
+    test_db.execute(open("requests/" + test + ".sql", "r").read())
+    assert str(test_db.fetchall()) == open("output/" + test + ".out", "r").read()
 
 
 @pytest.fixture
@@ -23,7 +23,7 @@ def test_db():
         cursor.execute(open(execute + ".sql").read())
     for table in tables:
         cursor.copy_expert("COPY marketplace." + table + " FROM STDIN DELIMITER ',' CSV HEADER",
-                           open("tests/data/" + table + ".csv", "r"))
+                           open("data/" + table + ".csv", "r"))
 
     yield cursor
 

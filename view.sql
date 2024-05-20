@@ -8,7 +8,7 @@ SELECT id,
        part_phone(phone::text) AS phone,
        part_email(email::text) AS email
 FROM marketplace.customer;
-
+.00
 -- Создадим представление на объявление на товар и его текущую цену
 CREATE OR REPLACE VIEW price_current AS
 SELECT advert.id AS advert_id, product.id AS product_id, product.forename AS product_name, advert.price
